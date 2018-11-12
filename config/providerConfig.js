@@ -1,4 +1,4 @@
-import config from './configManager';
+import config from './config';
 
 module.exports.provider = {
   scopes: ['birth'],
