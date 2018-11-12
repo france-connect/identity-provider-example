@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bulma.min.css' />
+  </head>
+  <body>
+  <div class="container">
+    <div class="notification has-text-centered">
+      <h1 class="title is-1"><%= title %></h1>
+      <form autocomplete="off" action="/interaction/<%= details.uuid %>/login" method="post">
+        <div class="field">
+          <input type="hidden" name="uuid" value="<%= details.uuid %>"/>
+          <div class="control">
+            <% if (error.message !== '') {%> <label for="login" class="has-text-danger"> Identifiants incrorrects </label> <% } %>
+            <input required class="input is-medium <% if(error.message !== '') {%>help is-danger<%}%>" type="text" name="login" placeholder="Enter any login" <% if (!details.params.login_hint) { %>autofocus="on"<% } else { %> value="<%= details.params.login_hint %>" <% } %>>
+          </div>
+          <br>
+          <div class="control">
+            <% if (error.message !== '') {%> <label for="password" class="has-text-danger"> Password incrorrects </label><% } %>
+            <input required class="input is-medium <% if(error.message !== '') {%>help is-danger<%}%>" type="password" name="password" placeholder="and password" <% if (details.params.login_hint) { %>autofocus="on"<% } %>>
+          </div>
+          <br>
+          <div class="control">
+            <label><input type="checkbox" name="remember" value="yes" checked="yes">Stay signed in</label>
+          </div>
+          <br>
+          <div class="field is-grouped has-text-centered">
+            <div class="control">
+              <button class="button is-link">Sign-in</button>
+            </div>
+            <div class="control">
+              <button class="button is-text">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  </body>
+</html>
