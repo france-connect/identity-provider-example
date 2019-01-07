@@ -1,14 +1,12 @@
 /* eslint-env mocha */
 import assert from 'assert';
-import UserDataCheck from '../../helpers/UserDataCheck';
+import { checkMandatoryData } from '../../services/user-data-check';
 
 describe('helpers/UserDataCheck', () => {
-  const userDataCheck = new UserDataCheck();
-
   describe('family_name', () => {
     it('should not be return if user.nomDeNaissance is empty', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -31,30 +29,30 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: user[0].prenom,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: user.prenom,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -62,7 +60,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.nomDeNaissance is undefined', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -85,30 +83,30 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: user[0].prenom,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: user.prenom,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -116,7 +114,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.nomDeNaissance is null', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -139,30 +137,30 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: user[0].prenom,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: user.prenom,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -170,7 +168,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if typeof user.nomDeNaissance is not a string', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -193,30 +191,30 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: user[0].prenom,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: user.prenom,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -226,7 +224,7 @@ describe('helpers/UserDataCheck', () => {
   describe('given_name', () => {
     it('should not be return if user.prenom is empty', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -249,28 +247,28 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        middle_name: user[0].secondPrenom,
-        phone_number: user[0].telephone,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        middle_name: user.secondPrenom,
+        phone_number: user.telephone,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -278,7 +276,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.prenom is undefined', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -301,29 +299,29 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
 
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        middle_name: user[0].secondPrenom,
-        phone_number: user[0].telephone,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        middle_name: user.secondPrenom,
+        phone_number: user.telephone,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -331,7 +329,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.prenom is null', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -354,29 +352,29 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
 
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        middle_name: user[0].secondPrenom,
-        phone_number: user[0].telephone,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        middle_name: user.secondPrenom,
+        phone_number: user.telephone,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -384,7 +382,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.prenom is not a string', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -407,28 +405,28 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        middle_name: user[0].secondPrenom,
-        phone_number: user[0].telephone,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        middle_name: user.secondPrenom,
+        phone_number: user.telephone,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -438,7 +436,7 @@ describe('helpers/UserDataCheck', () => {
   describe('birthdate', () => {
     it('should not be return if user.birthdate is empty', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -461,31 +459,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -493,7 +491,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.birthdate is undefined', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -516,31 +514,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -548,7 +546,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.birthdate is null', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -571,31 +569,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -603,7 +601,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.birthdate is not a string', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -626,31 +624,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -660,7 +658,7 @@ describe('helpers/UserDataCheck', () => {
   describe('gender', () => {
     it('should not be return if user.Gender is empty', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -683,31 +681,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -715,7 +713,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.Gender is undefined', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -738,31 +736,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -770,7 +768,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.Gender is null', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -793,31 +791,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -825,7 +823,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should not be return if user.Gender is not a string', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -848,31 +846,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthplace: user[0].departementDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthplace: user.departementDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -882,7 +880,7 @@ describe('helpers/UserDataCheck', () => {
   describe('birthplace', () => {
     it('should should not be return if user.departementDeNaissance is empty', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -905,31 +903,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -937,7 +935,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should should not be return if user.departementDeNaissance is undefined', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -960,31 +958,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -992,7 +990,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should should not be return if user.departementDeNaissance is null', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -1015,31 +1013,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);
@@ -1047,7 +1045,7 @@ describe('helpers/UserDataCheck', () => {
 
     it('should should not be return if user.departementDeNaissance is not a string', () => {
       // Setup
-      const user = [{
+      const user = {
         $oid: '5b3e1280c1eb6856db7362bb',
         SPI: '3999999887219',
         identifiant: '3_melaine',
@@ -1070,31 +1068,31 @@ describe('helpers/UserDataCheck', () => {
         adresseFormatee: '120 BOULEVARD FRANÇOIS ROBERT 13016 MARSEILLE',
         createdAt: '2018-07-05T00:00:00.000Z',
         updatedAt: '2018-07-05T00:00:00.000Z',
-      }];
+      };
       const expected = {
         address: {
-          country: user[0].codePaysDeNaissance,
-          formatted: user[0].adresseFormatee,
-          street_address: user[0].adresseFormatee,
+          country: user.codePaysDeNaissance,
+          formatted: user.adresseFormatee,
+          street_address: user.adresseFormatee,
         },
-        birthdate: user[0].birthdate,
-        birthcountry: user[0].codePaysDeNaissance,
-        birthregion: user[0].regionDeNaissance,
-        email: user[0].email,
-        family_name: user[0].nomDeNaissance,
-        gender: user[0].Gender,
-        given_name: user[0].prenom,
-        middle_name: user[0].secondPrenom,
-        name: `${user[0].nomDeNaissance} ${user[0].prenom}`,
-        nickname: user[0].prenom,
-        phone_number: user[0].telephone,
-        preferred_username: `${user[0].prenom}_${user[0].nomDeNaissance}`,
-        updated_at: user[0].updatedAt,
-        siret: user[0].siret,
+        birthdate: user.birthdate,
+        birthcountry: user.codePaysDeNaissance,
+        birthregion: user.regionDeNaissance,
+        email: user.email,
+        family_name: user.nomDeNaissance,
+        gender: user.Gender,
+        given_name: user.prenom,
+        middle_name: user.secondPrenom,
+        name: `${user.nomDeNaissance} ${user.prenom}`,
+        nickname: user.prenom,
+        phone_number: user.telephone,
+        preferred_username: `${user.prenom}_${user.nomDeNaissance}`,
+        updated_at: user.updatedAt,
+        siret: user.siret,
       };
 
       // Action
-      const results = userDataCheck.checkMandatoryData(user);
+      const results = checkMandatoryData(user);
 
       // Assert
       assert.deepEqual(expected, results);

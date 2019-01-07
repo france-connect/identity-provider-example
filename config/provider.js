@@ -1,6 +1,6 @@
-import config from './config';
+import { findById } from '../services/oidc-account';
 
-module.exports.provider = {
+export const provider = {
   scopes: ['birth'],
   cookies: {
     long: { signed: true, maxAge: (1 * 24 * 60 * 60) * 1000 }, // 1 day in ms
@@ -52,6 +52,5 @@ module.exports.provider = {
     DeviceCode: 10 * 60, // 10 minutes in seconds
     RefreshToken: 1 * 24 * 60 * 60, // 1 day in seconds
   },
+  findById,
 };
-
-module.exports.clients = [{ ...config }];

@@ -1,3 +1,4 @@
+// source https://github.com/panva/node-oidc-provider/blob/c782591e924fd297b6e0533d1e7560dc1c69e513/example/adapters/redis.js
 const Redis = require('ioredis'); // eslint-disable-line import/no-unresolved
 const { isEmpty } = require('lodash');
 
@@ -41,7 +42,6 @@ class RedisAdapter {
     } : JSON.stringify(payload);
 
     const multi = client.multi();
-
     multi[grantable.has(this.name) ? 'hmset' : 'set'](key, store);
 
     if (expiresIn) {
