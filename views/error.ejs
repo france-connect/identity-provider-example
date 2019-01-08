@@ -1,3 +1,22 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<section>
+    <div class="container">
+        <h3 class="section__title">Erreur</h3>
+
+        <p>
+            Une erreur est survenue. Le code de l'erreur est <i><%= errorCode %> (<%= errorMessage %>)</i>.
+        </p>
+        <p>
+            Merci de réessayer ultérieurement.
+        </p>
+    </div>
+</section>
+
+<div class="container">
+    <div class="text-center">
+        <div class="container">
+            <div class="text-center">
+                <p><a href="https://service-provider-example.herokuapp.com/">Retour sur le site de démonstation</a></p>
+            </div>
+        </div>
+    </div>
+</div>

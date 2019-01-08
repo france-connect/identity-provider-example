@@ -2,39 +2,42 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-
 import helmet from 'helmet';
 import Provider from 'oidc-provider';
-import Account from './data/account';
 
-const { provider: providerConfiguration, clients } = require('./config/providerConfig');
+import { provider as providerConfiguration } from './config/provider';
+import { clients } from './config/clients';
+import { mountRoutes } from './router';
 
-const { PORT = 4000, ISSUER = `http://localhost:${PORT}` } = process.env;
-const indexRouter = require('./routes/index');
+const { PORT = 5000, ISSUER = `http://localhost:${PORT}` } = process.env;
 
 const app = express();
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use((req, res, next) => {
+  // cheap layout implementation for ejs
+  const orig = res.render;
+  res.render = (view, locals) => {
+    app.render(view, locals, (err, html) => {
+      if (err) throw err;
+      orig.call(res, '_layout', {
+        ...locals,
+        body: html,
+      });
+    });
+  };
+  next();
+});
 
+// Other middlewares setup
 app.use(helmet());
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/assets', express.static('public'));
 
-// Set the provider findById method.
-providerConfiguration.findById = Account.findById;
-
-// Create new Provider
 const provider = new Provider(ISSUER, providerConfiguration);
-
-/**
- * Get port from environment and store in Express.
- */
-app.set('port', PORT);
 
 let server;
 
@@ -43,7 +46,7 @@ let server;
     clients,
   });
 
-  indexRouter(app, provider);
+  mountRoutes(app, provider);
   app.use(provider.callback);
 
   server = app.listen(PORT, () => {
