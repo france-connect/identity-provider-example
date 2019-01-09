@@ -46,6 +46,8 @@ let server;
     clients,
   });
 
+  provider.proxy = true;
+
   mountRoutes(app, provider);
   app.use(provider.callback);
 
