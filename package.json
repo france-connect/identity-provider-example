@@ -16,7 +16,6 @@
     "ejs": "~2.5.7",
     "express": "~4.16.0",
     "helmet": "^3.13.0",
-    "ioredis": "^4.0.0",
     "lodash": "^4.17.10",
     "morgan": "~1.9.0",
     "node-csv-query": "^0.1.0",
