@@ -27,13 +27,13 @@ export const mountRoutes = (app, provider) => {
         interaction: { error, error_description: errorDescription },
       } = await provider.interactionDetails(req);
 
-      const notification = messages[req.query.notification]
+      const notifications = messages[req.query.notification]
         ? [messages[req.query.notification]]
         : [];
 
       if (error === 'login_required') {
         return res.render('sign-in', {
-          notification,
+          notifications,
           interactionId,
         });
       }
