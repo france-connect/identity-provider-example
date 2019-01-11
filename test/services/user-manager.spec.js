@@ -8,11 +8,11 @@ describe('data/Account', () => {
       // Setup
       const login = '3_melaine';
       const password = '123';
-      const expectedId = '5b3e1280c1eb6856db7362bb';
+      const expectedId = '3';
       // Action
-      const { $oid } = await authenticate(login, password);
+      const { id } = await authenticate(login, password);
       // Assert
-      expect($oid).to.equal(expectedId);
+      expect(id).to.equal(expectedId);
     });
 
     it('should throw an error if invalid login', async () => {
