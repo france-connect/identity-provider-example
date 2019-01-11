@@ -3,9 +3,7 @@ import { isEmpty } from 'lodash';
 import database from './database';
 
 export const findOneById = async (id) => {
-  const users = await database.connection.find({
-    $oid: id,
-  });
+  const users = await database.connection.find({ id });
 
   return isEmpty(users) ? null : users[0];
 };
@@ -25,7 +23,7 @@ export const authenticate = async (login, password) => {
     throw new Error('invalid_credentials');
   }
 
-  const doPasswordMatch = password === user.password;
+  const doPasswordMatch = password === user.motDePasse;
 
   if (!doPasswordMatch) {
     throw new Error('invalid_credentials');

@@ -1,7 +1,6 @@
 import { isEmpty } from 'lodash';
 
 import { findOneById as findOneUserById } from './user-manager';
-import { checkMandatoryData } from './user-data-check';
 
 export const findById = async (ctx, sub) => {
   const user = await findOneUserById(sub);
@@ -13,9 +12,44 @@ export const findById = async (ctx, sub) => {
   return {
     accountId: sub,
     async claims() {
-      const validUser = checkMandatoryData(user);
+      const {
+        id,
+        // identifiant,
+        // motDePasse,
+        nomDeNaissance,
+        nomDUsage,
+        prenoms,
+        genre,
+        email,
+        telephone,
+        dateDeNaissance,
+        codePostalLieuDeNaissance,
+        codePaysDeNaissance,
+        adressePays,
+        adresseVille,
+        adresseCodePostal,
+        adresseVoie,
+      } = user;
 
-      return { sub, ...validUser };
+      return {
+        sub: id,
+        given_name: prenoms,
+        family_name: nomDeNaissance,
+        birthdate: dateDeNaissance,
+        gender: genre,
+        birthplace: codePostalLieuDeNaissance,
+        birthcountry: codePaysDeNaissance,
+        preferred_username: nomDUsage,
+        email,
+        address: {
+          country: adressePays,
+          formatted: [adressePays, adresseVille, adresseCodePostal, adresseVoie].join(' '),
+          locality: adresseVille,
+          postal_code: adresseCodePostal,
+          street_address: adresseVoie,
+        },
+        phone_number: telephone,
+      };
     },
   };
 };

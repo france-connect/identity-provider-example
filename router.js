@@ -53,7 +53,7 @@ export const mountRoutes = (app, provider) => {
 
       const result = {
         login: {
-          account: user.$oid,
+          account: user.id,
           acr: 'urn:mace:incommon:iap:bronze',
           amr: ['pwd'],
           ts: Math.floor(Date.now() / 1000),

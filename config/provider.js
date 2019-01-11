@@ -8,22 +8,26 @@ export const provider = {
     keys: ['some secret key', 'and also the old rotated away some time ago', 'and one more'],
   },
   claims: {
-    family_name: ['family_name'],
-    given_name: ['given_name'],
-    nickname: ['nickname'],
-    gender: ['gender'],
-    preferred_username: ['preferred_username'],
-    address: ['address'],
-    email: ['email'],
-    birth: ['birthdate', 'birthregion', 'birthcountry', 'birthplace'],
+    openid: ['sub'], // Identifiant technique (sub) de l'utilisateur au format OpenIDConnect
+    gender: ['gender'], // Sexe
+    birthdate: ['birthdate'], // Date de naissance
+    birthcountry: ['birthcountry'], // Pays de naissance
+    birthplace: ['birthplace'], // Ville de naissance
+    given_name: ['given_name'], // Prénoms
+    family_name: ['family_name'], // Nom de naissance
+    email: ['email'], // Adresse électronique
+    preferred_username: ['preferred_username'], // Nom d'usage (information renvoyée si disponible)
+    address: ['address'], // Adresse postale (information renvoyée si disponible)
+    phone: ['phone_number'], // Numéro de téléphone (information renvoyée si disponible)
     profile: [
-      'name',
-      'family_name',
+      'sub',
       'given_name',
-      'nickname',
+      'family_name',
+      'birthdate',
       'gender',
+      'birthplace',
+      'birthcountry',
       'preferred_username',
-      'email',
     ],
   },
   grant_types_supported: ['authorization_code'],
