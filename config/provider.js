@@ -7,6 +7,11 @@ export const provider = {
     short: { signed: true },
     keys: ['some secret key', 'and also the old rotated away some time ago', 'and one more'],
   },
+  acrValues: [
+    'eidas1',
+    'eidas2',
+    'eidas3',
+  ],
   claims: {
     openid: ['sub'], // Identifiant technique (sub) de l'utilisateur au format OpenIDConnect
     gender: ['gender'], // Sexe
