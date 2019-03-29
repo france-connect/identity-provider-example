@@ -55,9 +55,8 @@ export const provider = {
   interactionUrl: function interactionUrl(ctx, interaction) { // eslint-disable-line no-unused-vars
     return `/interaction/${ctx.oidc.uuid}`;
   },
-    async logoutSource(ctx, form)
-    {
-      ctx.body = `<!DOCTYPE html>
+  async logoutSource(ctx, form) {
+    ctx.body = `<!DOCTYPE html>
       <head>
         <title>Logout</title>
       </head>
@@ -76,7 +75,7 @@ export const provider = {
         </script>
       </body>
       </html>`;
-},
+  },
   clientCacheDuration: 1 * 24 * 60 * 60, // 1 day in seconds,
   ttl: {
     AccessToken: 1 * 60 * 60, // 1 hour in seconds
