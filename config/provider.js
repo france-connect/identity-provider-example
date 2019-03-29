@@ -55,7 +55,6 @@ export const provider = {
   interactionUrl: function interactionUrl(ctx, interaction) { // eslint-disable-line no-unused-vars
     return `/interaction/${ctx.oidc.uuid}`;
   },
-  ,
     async logoutSource(ctx, form)
     {
       ctx.body = `<!DOCTYPE html>
