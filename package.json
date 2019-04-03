@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "main": "lib/server.js",
+    "build": "babel src --out-dir lib --ignore bin/ --copy-files",
+    "start": "node ./src/bin/www",
     "test": "NODE_ENV=test mocha -R spec ./test/* --exit --require babel-polyfill --require babel-register",
     "lint": "eslint ."
   },
@@ -22,6 +24,7 @@
     "oidc-provider": "^4.8.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
