@@ -2,8 +2,8 @@
   "name": "fi-mock",
   "version": "0.0.0",
   "private": true,
+  "main": "lib/server.js",
   "scripts": {
-    "main": "lib/server.js",
     "build": "babel src --out-dir lib --ignore bin/ --copy-files",
     "start": "node ./src/bin/www",
     "test": "NODE_ENV=test mocha -R spec ./test/* --exit --require babel-polyfill --require babel-register",
