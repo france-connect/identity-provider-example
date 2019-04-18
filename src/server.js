@@ -35,10 +35,11 @@ server.use((req, res, next) => {
 server.use(helmet());
 server.use(logger('dev'));
 server.use(cookieParser());
-server.use('/assets', express.static('public'));
+server.use('/assets', express.static(path.join(__dirname, 'public')));
 
 const provider = new Provider(ISSUER, providerConfiguration);
 
+server.provider = provider;
 
 server.start = function() {
   let serverInstance;
