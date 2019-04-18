@@ -7,7 +7,7 @@
     "build": "babel src --out-dir lib --ignore bin/ --copy-files",
     "start": "node ./src/bin/www",
     "test": "NODE_ENV=test mocha -R spec ./test/* --exit --require babel-polyfill --require babel-register",
-    "lint": "eslint ."
+    "lint": "eslint test/ src/"
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

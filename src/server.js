@@ -41,7 +41,7 @@ const provider = new Provider(ISSUER, providerConfiguration);
 
 server.provider = provider;
 
-server.start = function() {
+server.start = function start() {
   let serverInstance;
 
   (async () => {
@@ -64,6 +64,6 @@ server.start = function() {
     console.error(err);
     process.exitCode = 1;
   });
-}
+};
 
 export default server;
