@@ -1,6 +1,6 @@
 {
-  "name": "fi-mock",
-  "version": "0.0.0",
+  "name": "fi-example",
+  "version": "0.0.1",
   "private": true,
   "main": "lib/server.js",
   "scripts": {
