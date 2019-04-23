@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 import { expect } from 'chai';
-import { authenticate } from '../../services/user-manager';
+import { authenticate } from '../../src/services/user-manager';
 
 describe('data/Account', () => {
   describe('authenticate', () => {

@@ -3,7 +3,7 @@ import csvdb from 'node-csv-query';
 
 const database = { connection: null };
 
-csvdb(path.join(__dirname, '../database.csv'), { rtrim: true, cast: false, comment: '#' }).then((db) => {
+csvdb(path.join(__dirname, '../../database.csv'), { rtrim: true, cast: false, comment: '#' }).then((db) => {
   // eslint-disable-next-line no-console
   console.log('Connected to database!');
 
