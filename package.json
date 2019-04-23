@@ -5,7 +5,7 @@
   "main": "lib/server.js",
   "scripts": {
     "build": "babel src --out-dir lib --ignore bin/ --copy-files",
-    "start": "node ./src/bin/www",
+    "start": "node ./bin/www",
     "test": "NODE_ENV=test mocha -R spec ./test/* --exit --require babel-polyfill --require babel-register",
     "lint": "eslint test/ src/"
   },
