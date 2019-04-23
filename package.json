@@ -1,13 +1,13 @@
 {
   "name": "fi-example",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
   "main": "lib/server.js",
   "scripts": {
     "build": "babel src --out-dir lib --ignore bin/ --copy-files",
     "start": "node ./bin/www",
     "test": "NODE_ENV=test mocha -R spec ./test/* --exit --require babel-polyfill --require babel-register",
-    "lint": "eslint test/ src/"
+    "lint": "eslint test/ src/",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
