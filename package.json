@@ -4,7 +4,8 @@
   "main": "lib/server.js",
   "scripts": {
     "build": "babel src --out-dir lib --ignore bin/ --copy-files",
-    "start": "node ./bin/www",
+    "dev": "node ./bin/www",
+    "start": "[ -d ./lib ] && node ./lib/app.js || echo 'Error: Directory `./lib` is missing.\nUse `npm run build` to build app for production.\nUse `npm run dev` for development.'",
     "test": "NODE_ENV=test mocha -R spec ./test/* --exit --require babel-polyfill --require babel-register",
     "lint": "eslint test/ src/",
     "prepublish": "npm run build"
