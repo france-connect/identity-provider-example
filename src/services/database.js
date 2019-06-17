@@ -4,19 +4,27 @@ import fs from 'fs';
 
 const database = { connection: null };
 
+export function getFilePathList(paths) {
+  return (
+    fs
+      .readdirSync(path.join.apply(null, paths))
+      // only takes data files
+      .filter(filename => filename.endsWith('.csv'))
+      // prepend path to filename
+      .map(filename => path.join.apply(null, [...paths, filename]))
+  );
+}
+
 const filenames = [
-  '../database.csv',
-  ...fs.readdirSync(path.join(__dirname, '../../data')),
+  path.join(__dirname, '../../database.csv'),
+  ...getFilePathList([__dirname, '../../data']),
 ];
 
-const filteredAbsoluteFilenames = filenames
-  // change relative to absolute path
-  .map(filename => path.join(__dirname, '../../data/', filename))
-  // only takes data files
-  .filter(filename => filename.endsWith('.csv'));
+if (typeof process.env.DATABASE_PATH !== 'undefined') {
+  filenames.push(...getFilePathList([process.env.DATABASE_PATH]));
+}
 
-const filebuffers = filteredAbsoluteFilenames
-  .map(filename => fs.readFileSync(filename));
+const filebuffers = filenames.map(filename => fs.readFileSync(filename));
 
 const tempFilename = path.join(__dirname, '../../.aggregated_database.csv');
 
