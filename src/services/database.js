@@ -4,24 +4,20 @@ import fs from 'fs';
 
 const database = { connection: null };
 
-export function getFilePathList(paths) {
-  return (
-    fs
-      .readdirSync(path.join.apply(null, paths))
-      // only takes data files
-      .filter(filename => filename.endsWith('.csv'))
-      // prepend path to filename
-      .map(filename => path.join.apply(null, [...paths, filename]))
-  );
-}
+export const getFilesPathsFromDir = dirPath => fs
+  .readdirSync(dirPath)
+// only takes data files
+  .filter(filename => filename.endsWith('.csv'))
+// prepend path to filename
+  .map(filename => path.join(dirPath, filename));
 
 const filenames = [
   path.join(__dirname, '../../database.csv'),
-  ...getFilePathList([__dirname, '../../data']),
+  ...getFilesPathsFromDir(path.join(__dirname, '../../data')),
 ];
 
 if (typeof process.env.DATABASE_PATH !== 'undefined') {
-  filenames.push(...getFilePathList([process.env.DATABASE_PATH]));
+  filenames.push(...getFilesPathsFromDir(process.env.DATABASE_PATH));
 }
 
 const filebuffers = filenames.map(filename => fs.readFileSync(filename));
