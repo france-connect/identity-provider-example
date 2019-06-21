@@ -4,19 +4,23 @@ import fs from 'fs';
 
 const database = { connection: null };
 
+export const getFilesPathsFromDir = dirPath => fs
+  .readdirSync(dirPath)
+// only takes data files
+  .filter(filename => filename.endsWith('.csv'))
+// prepend path to filename
+  .map(filename => path.join(dirPath, filename));
+
 const filenames = [
-  '../database.csv',
-  ...fs.readdirSync(path.join(__dirname, '../../data')),
+  path.join(__dirname, '../../database.csv'),
+  ...getFilesPathsFromDir(path.join(__dirname, '../../data')),
 ];
 
-const filteredAbsoluteFilenames = filenames
-  // change relative to absolute path
-  .map(filename => path.join(__dirname, '../../data/', filename))
-  // only takes data files
-  .filter(filename => filename.endsWith('.csv'));
+if (typeof process.env.DATABASE_PATH !== 'undefined') {
+  filenames.push(...getFilesPathsFromDir(process.env.DATABASE_PATH));
+}
 
-const filebuffers = filteredAbsoluteFilenames
-  .map(filename => fs.readFileSync(filename));
+const filebuffers = filenames.map(filename => fs.readFileSync(filename));
 
 const tempFilename = path.join(__dirname, '../../.aggregated_database.csv');
 
