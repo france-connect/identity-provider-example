@@ -5,3 +5,5 @@ id,identifiant           ,motDePasse,nomDeNaissance,nomDUsage,prenoms           
 4 ,tatiana_no_family_name,123       ,              ,         ,Tatiana Tony              ,male  ,cinq_tatiana@mail.com        ,0123456789,1945-09-30     ,95277                    ,99100              ,France     ,Marseille   ,13016            ,97 Boulevard François Robert
 8 ,cerema                ,123       ,HOCHON        ,         ,Paul                      ,male  ,paul.hochon@cerema.fr        ,0123456789,1955-01-01     ,69674                    ,99100              ,France     ,BRON        ,69000            ,25 Avenue Mitterrand
 9, erreur14              ,123       ,SMET          ,         ,Jean-Philippe             ,male  ,alpilloy@kaliopmail.com      ,0123456789,1943-06-15     ,75109                    ,99100              ,France     ,Paris       ,69000            ,25 avenue Mitterrand
+10, expertcompta         ,123       ,DURANT        ,         ,Philippe                  ,male  ,alpilloy@kaliopmail.com      ,0123456789,1975-11-22     ,06789                    ,99100              ,France     ,Paris       ,69000            ,25 avenue Mitterrand
+
