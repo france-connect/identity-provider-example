@@ -1,6 +1,6 @@
 {
   "name": "fi-example",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "lib/server.js",
   "scripts": {
     "build": "babel src --out-dir lib --ignore bin/ --copy-files",
