@@ -38,7 +38,7 @@ To emulate a click on an identity provider on /api/v1/authorize page of franceco
 
 You should be redirected to your local server.
 
-You can use the following test credentials : 3_melaine | 123
+You can use the following test credentials : test | 123
 
 More credentials are available [here](/database.csv).
 

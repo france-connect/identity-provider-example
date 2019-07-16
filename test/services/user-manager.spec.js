@@ -6,9 +6,9 @@ describe('data/Account', () => {
   describe('authenticate', () => {
     it('should return a user if valid credentials', async () => {
       // Setup
-      const login = '3_melaine';
+      const login = 'test';
       const password = '123';
-      const expectedId = '3';
+      const expectedId = '1';
       // Action
       const { id } = await authenticate(login, password);
       // Assert
@@ -17,7 +17,7 @@ describe('data/Account', () => {
 
     it('should throw an error if invalid login', async () => {
       // Setup
-      const login = '3_melai';
+      const login = 'tes';
       const password = '123';
       const expectedErrorMessage = 'invalid_credentials';
       // Action
@@ -33,7 +33,7 @@ describe('data/Account', () => {
 
     it('should throw an error if invalid password', async () => {
       // Setup
-      const login = '3_melaine';
+      const login = 'test';
       const password = '1234';
       const expectedErrorMessage = 'invalid_credentials';
       // Action
