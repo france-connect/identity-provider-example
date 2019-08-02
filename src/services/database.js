@@ -29,10 +29,14 @@ fs.writeFileSync(tempFilename, Buffer.concat(filebuffers));
 csvdb(tempFilename, { rtrim: true, cast: false, comment: '#' }).then((db) => {
   // eslint-disable-next-line no-console
   console.log('Connected to database!');
-
-  fs.unlinkSync(tempFilename);
-
   database.connection = db;
+
+  try {
+    fs.unlinkSync(tempFilename);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(error);
+  }
 });
 
 export default database;
