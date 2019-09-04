@@ -35,6 +35,7 @@ id,identifiant        ,motDePasse,nomDeNaissance,nomDUsage,prenoms              
 34,test_FABIEN        ,123       ,PENDERIE      ,         ,FABIEN                    ,male  ,doqenaxeq-1682@yopmail.com               ,0123456789,1986-03-25     ,83028                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
 35,test_THIBAULT      ,123       ,TABLE         ,         ,THIBAULT                  ,male  ,iffikeppano-9064@yopmail.com             ,0123456789,1991-02-13     ,75116                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
 36,test_CAROLINE      ,123       ,TABOURET      ,CHAISE   ,CAROLINE SOPHIE JULIE     ,female,baffamahyc-4136@yopmail.com              ,0123456789,1989-12-06     ,09152                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
+37,insee_ancien       ,123       ,ACNUSER       ,ACNTEST  ,SARAH SOPHIE              ,female,sarah.acnuser@test.com                   ,0123456789,1996-12-06     ,75012                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
 
 
 
