@@ -32,7 +32,7 @@ export const mountRoutes = (app, provider) => {
         : [];
 
       const {
-        session: { info: { acr_values : acr } = {} }
+        session: { info: { acr_values: acr } = {} },
       } = req;
 
       if (error === 'login_required') {
