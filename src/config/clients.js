@@ -8,4 +8,14 @@ export const clients = [{
   id_token_signed_response_alg: 'HS256',
   post_logout_redirect_uris: [process.env.POST_LOGOUT_REDIRECT_URIS || 'https://fcp.integ01.dev-franceconnect.fr/api/v1/logout/redirect_from_provider'],
   backchannel_logout_uri: process.env.BACKCHANNEL_LOGOUT_URI,
+},{
+  client_id: '09a1a257648c1742c74d6a3d84b31943',
+  client_secret: 'f6357b756ef777d87bf36baa2fef4ea7',
+  grant_types: ['authorization_code'],
+  response_types: ['code'],
+  redirect_uris: ['franceconnect://openid_redirect_url'],
+  token_endpoint_auth_method: 'client_secret_post',
+  id_token_signed_response_alg: 'HS256',
+  post_logout_redirect_uris: ['franceconnect://openid_logout_url'],
+  backchannel_logout_uri: 'franceconnect://openid_backchannel_logout_url',
 }];
