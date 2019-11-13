@@ -31,10 +31,15 @@ export const mountRoutes = (app, provider) => {
         ? [messages[req.query.notification]]
         : [];
 
+      const {
+        session: { info: { acr_values: acr } = {} },
+      } = req;
+
       if (error === 'login_required') {
         return res.render('sign-in', {
           notifications,
           interactionId,
+          acr,
         });
       }
 
