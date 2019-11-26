@@ -60,4 +60,8 @@ id,identifiant        ,motDePasse,nomDeNaissance                                
 59,3999999998330,123,CIS CENTTREIZE,,PRENOM LUC,male ,fdsccnrouugf-5365@yopmail.com,123456789,1949-02-21,,99119,France     ,Paris       ,75107,20 avenue de Ségur
 60,3999999937269,123,CIS CINQUANTEDEUX,,PNM CHLOE,female,oyabpxzfujsr-8063@yopmail.com,123456789,1972-05-17,,99133,France     ,Paris       ,75107,20 avenue de Ségur
 61,3999999987319,123,CIS CENTDEUX,,PNM EMILIE,female,agqvbglqomcc -4351@yopmail.com,123456789,1962-09-05,,99126,France     ,Paris       ,75107,20 avenue de Ségur
-62 ,test_droits               ,123       ,DURAND                                              ,Fournier       ,Audrey      ,female,adurand@yopmail.com   ,0143356789,1978-02-15     ,75108                    ,99200              ,France     ,Paris       ,75109            ,20 avenue de Ségur
+62,test_doublon,123,CASA,,MILA,female,Testcas123@yopmail.com,123456789,1986-01-01,,93100,France,Montreuil,93100,9 rue de l'Eglise
+63,test_doublon1,123,CASA,,MILA,female,Testcas456@yopmail.com,123456789,1986-01-01,,75015,France,Paris,75015,10 rue de l'Opera
+64,test_doublon2,123,CASA,,MILA,female,Testcas678@yopmail.com,123456789,1972-06-26,,75018,France,Paris,75018,45 rue du Pasteur
+65 ,test_droits               ,123       ,DURAND                                              ,Fournier       ,Audrey      ,female,adurand@yopmail.com   ,0143356789,1978-02-15     ,75108                    ,99200              ,France     ,Paris       ,75109            ,20 avenue de Ségur
+
