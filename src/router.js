@@ -8,6 +8,23 @@ const messages = {
     message: 'Email ou mot de passe incorrect.',
   },
 };
+const DEFAULT_EIDAS_LEVEL = 'eidas3';
+
+export const getEidasLevel = (req) => {
+  if (!req.session || !req.session.infos || !req.session.infos.acr_values) {
+    return DEFAULT_EIDAS_LEVEL;
+  }
+
+  const validEidasLevel = ['eidas1', 'eidas2', 'eidas3'];
+  const acrTab = req.session.infos.acr_values
+    .split(' ')
+    .filter(val => validEidasLevel.includes(val));
+
+  if (acrTab.length === 1) {
+    return acrTab[0];
+  }
+  return DEFAULT_EIDAS_LEVEL;
+};
 
 export const mountRoutes = (app, provider) => {
   app.use('/interaction', (req, res, next) => {
@@ -18,7 +35,9 @@ export const mountRoutes = (app, provider) => {
 
   app.use('/interaction', urlencoded({ extended: false }));
 
-  app.get('/', (req, res) => { res.sendStatus(200); });
+  app.get('/', (req, res) => {
+    res.sendStatus(200);
+  });
 
   app.get('/interaction/:grant', async (req, res, next) => {
     try {
@@ -31,10 +50,7 @@ export const mountRoutes = (app, provider) => {
         ? [messages[req.query.notification]]
         : [];
 
-      const {
-        session: { info: { acr_values: acr } = {} },
-      } = req;
-
+      const acr = getEidasLevel(req);
       if (error === 'login_required') {
         return res.render('sign-in', {
           notifications,
@@ -72,13 +88,14 @@ export const mountRoutes = (app, provider) => {
       return await provider.interactionFinished(req, res, result);
     } catch (error) {
       if (error.message === 'invalid_credentials') {
-        return res.redirect(`/interaction/${req.params.grant}?notification=${error.message}`);
+        return res.redirect(
+          `/interaction/${req.params.grant}?notification=${error.message}`,
+        );
       }
 
       return next(error);
     }
   });
-
 
   // eslint-disable-next-line no-unused-vars
   app.use((err, req, res, next) => {
