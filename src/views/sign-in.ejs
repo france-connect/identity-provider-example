@@ -27,9 +27,9 @@
                 <a title="Forcer le niveau eIDAS renvoyé par le Fournisseur d'Identité ne fonctionnera que si le Fournisseur de Service a précisé le paramètre &quot;acr_values&quot; dans l'appel à FranceConnect. Le cas échéant, le niveau faible (eidas1) sera renvoyé par FranceConnect">(info)</a>
             </label>
             <select class="form-control" required name="acr" placeholder="Niveau eIDAS (à renvoyer à FC)*">
-                <option value="eidas1" <%= !locals.acr || locals.acr && locals.acr == 'eidas1' ? 'selected' : '' %>>Faible (eidas1)</option>
-                <option value="eidas2" <%= locals.acr && locals.acr == 'eidas2' ? 'selected' : '' %>>Substantiel (eidas2)</option>
-                <option value="eidas3" <%= locals.acr && locals.acr == 'eidas3' ? 'selected' : '' %>>Élevé (eidas3)</option>
+                <option value="eidas1" <%= !acr || acr && acr == 'eidas1' ? 'selected' : '' %>>Faible (eidas1)</option>
+                <option value="eidas2" <%= acr && acr == 'eidas2' ? 'selected' : '' %>>Substantiel (eidas2)</option>
+                <option value="eidas3" <%= acr && acr == 'eidas3' ? 'selected' : '' %>>Élevé (eidas3)</option>
             </select>
         </div>
 
