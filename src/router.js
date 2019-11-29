@@ -8,7 +8,7 @@ const messages = {
     message: 'Email ou mot de passe incorrect.',
   },
 };
-const REQUIRED_LOGIN = 'login_required';
+const DEFAULT_EIDAS_LEVEL = 'eidas3';
 
 export const mountRoutes = (app, provider) => {
   app.use('/interaction', (req, res, next) => {
@@ -19,23 +19,25 @@ export const mountRoutes = (app, provider) => {
 
   app.use('/interaction', urlencoded({ extended: false }));
 
-  app.get('/', (req, res) => {
-    res.sendStatus(200);
-  });
+  app.get('/', (req, res) => { res.sendStatus(200); });
 
   app.get('/interaction/:grant', async (req, res, next) => {
     try {
       const {
         uuid: interactionId,
-        params: { acr_values: acr },
         interaction: { error, error_description: errorDescription },
       } = await provider.interactionDetails(req);
+
+      let acr = DEFAULT_EIDAS_LEVEL;
+      if (req.params && req.params.acr_values) {
+        acr = req.params.acr_values;
+      }
 
       const notifications = messages[req.query.notification]
         ? [messages[req.query.notification]]
         : [];
 
-      if (error === REQUIRED_LOGIN) {
+      if (error === 'login_required') {
         return res.render('sign-in', {
           notifications,
           interactionId,
