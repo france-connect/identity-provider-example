@@ -8,6 +8,7 @@ const messages = {
     message: 'Email ou mot de passe incorrect.',
   },
 };
+const DEFAULT_EIDAS_LEVEL = 'eidas3';
 
 export const mountRoutes = (app, provider) => {
   app.use('/interaction', (req, res, next) => {
@@ -25,6 +26,7 @@ export const mountRoutes = (app, provider) => {
       const {
         uuid: interactionId,
         interaction: { error, error_description: errorDescription },
+        params: { acr_values: acrValues = DEFAULT_EIDAS_LEVEL },
       } = await provider.interactionDetails(req);
 
       const notifications = messages[req.query.notification]
@@ -35,6 +37,7 @@ export const mountRoutes = (app, provider) => {
         return res.render('sign-in', {
           notifications,
           interactionId,
+          acrValues,
         });
       }
 
@@ -73,7 +76,6 @@ export const mountRoutes = (app, provider) => {
       return next(error);
     }
   });
-
 
   // eslint-disable-next-line no-unused-vars
   app.use((err, req, res, next) => {
