@@ -26,12 +26,8 @@ export const mountRoutes = (app, provider) => {
       const {
         uuid: interactionId,
         interaction: { error, error_description: errorDescription },
+        params: { acr_values: acrValues = DEFAULT_EIDAS_LEVEL },
       } = await provider.interactionDetails(req);
-
-      let acr = DEFAULT_EIDAS_LEVEL;
-      if (req.params && req.params.acr_values) {
-        acr = req.params.acr_values;
-      }
 
       const notifications = messages[req.query.notification]
         ? [messages[req.query.notification]]
@@ -41,7 +37,7 @@ export const mountRoutes = (app, provider) => {
         return res.render('sign-in', {
           notifications,
           interactionId,
-          acr,
+          acrValues,
         });
       }
 
@@ -74,9 +70,7 @@ export const mountRoutes = (app, provider) => {
       return await provider.interactionFinished(req, res, result);
     } catch (error) {
       if (error.message === 'invalid_credentials') {
-        return res.redirect(
-          `/interaction/${req.params.grant}?notification=${error.message}`,
-        );
+        return res.redirect(`/interaction/${req.params.grant}?notification=${error.message}`);
       }
 
       return next(error);
