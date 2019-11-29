@@ -85,4 +85,5 @@ export const provider = {
     RefreshToken: 1 * 24 * 60 * 60, // 1 day in seconds
   },
   findById,
+  extraParams: ['acr_values'],
 };
