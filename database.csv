@@ -72,9 +72,10 @@ dgfif-113,3999999998330,123,CIS CENTTREIZE,,PRENOM LUC,male ,fdsccnrouugf-5365@y
 66,sans_mail          ,123       ,DUFOUR                                              ,DUFOUR   ,Amandine                  ,female,                              ,0123456789,1989-03-02     ,75119                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
 67,sans_telephone     ,123       ,MEUNIER                                             ,MEUNIER  ,Hugo                      ,male  ,sans_tel@test.fr              ,          ,1990-12-19     ,75119                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
 68,sans_mail_sans_tel ,123       ,DUPAIN                                              ,DUPAIN   ,Eva                       ,female,                              ,          ,1990-12-06     ,75119                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
-69,3999999931263,123,CIS QUARANTESIX,,PNM EMMA,female,,,1976-11-17,86190,99100,,,
-70,3999999930262,123,CIS QUARANTECINQ,,PRENOM ERIC,male ,,,1982-10-12,51054,99100,,,
-71,3999999932264,123,CIS QUARANTESEPT,,PRENOM YVES,male ,,,1967-11-12,51032,99100,,,
-72,3999999936268,123,CIS CINQUANTEUN,,PRENOM GAUTIER,male ,,,1977-01-23,75001,99100,,,
-73,3999999942274,123,CIS CINQUANTESEPT,,PRENOM CHARLES,male ,,,1932-04-28,70249,99100,,,
-74,3999999943275,123,CIS CINQUANTEHUIT,,PRENOM JOSEPH,male ,,,1984-12-15,50151,99100,,,
+69,Désactivé               ,123       ,DUPLANTY                                              ,         ,Mélodie      ,female,hazossiddyc-3497@yopmail.com   ,0123456789,1962-08-24     ,75107                    ,99100              ,France     ,Paris       ,75107            ,20 avenue de Ségur
+70,3999999931263,123,CIS QUARANTESIX,,PNM EMMA,female,,,1976-11-17,86190,99100,,,
+71,3999999930262,123,CIS QUARANTECINQ,,PRENOM ERIC,male ,,,1982-10-12,51054,99100,,,
+72,3999999932264,123,CIS QUARANTESEPT,,PRENOM YVES,male ,,,1967-11-12,51032,99100,,,
+73,3999999936268,123,CIS CINQUANTEUN,,PRENOM GAUTIER,male ,,,1977-01-23,75001,99100,,,
+74,3999999942274,123,CIS CINQUANTESEPT,,PRENOM CHARLES,male ,,,1932-04-28,70249,99100,,,
+75,3999999943275,123,CIS CINQUANTEHUIT,,PRENOM JOSEPH,male ,,,1984-12-15,50151,99100,,,
