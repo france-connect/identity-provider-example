@@ -7,7 +7,7 @@ An implementation example of a FranceConnect Identity Provider.
 
 ## Prerequisites
 
-This server use [nodejs version 8.12](https://nodejs.org/en/download/).
+This server use [nodejs version 12.16](https://nodejs.org/en/download/).
 
 ## Install
 
