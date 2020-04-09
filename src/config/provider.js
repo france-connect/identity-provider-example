@@ -41,6 +41,7 @@ export const provider = {
     discovery: true,
     sessionManagement: true,
     backchannelLogout: true,
+    encryption: process.env.USE_ENCRYPTION === 'true',
   },
   routes: {
     authorization: '/user/authorize',
