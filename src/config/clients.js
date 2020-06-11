@@ -5,6 +5,7 @@ export const clients = [{
   response_types: ['code'],
   redirect_uris: [process.env.REDIRECT_URI || 'https://fcp.integ01.dev-franceconnect.fr/oidc_callback'],
   token_endpoint_auth_method: 'client_secret_post',
+  revocation_endpoint_auth_method: 'client_secret_post',
   post_logout_redirect_uris: [process.env.POST_LOGOUT_REDIRECT_URIS || 'https://fcp.integ01.dev-franceconnect.fr/api/v1/logout/redirect_from_provider'],
   backchannel_logout_uri: process.env.BACKCHANNEL_LOGOUT_URI,
   // Backward compatible default value
