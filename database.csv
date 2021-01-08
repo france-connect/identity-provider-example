@@ -85,5 +85,5 @@ id       ,identifiant                     ,motDePasse,nomDeNaissance            
 128,radnoncertif05_tech             ,123,BOUCHON A                                           ,         ,Dpi                       ,female,test@yopmail.com              ,123456789,1985-09-11     ,68022,99100,France     ,Paris       ,75107,20 avenue de Ségur
 129,radnoncertif06_tech             ,123,BOUCHONA                                            ,         ,Dpi                       ,male  ,test@yopmail.com              ,123456789,1982-11-06     ,93008,99109,France     ,Paris       ,75107,20 avenue de Ségur
 130,naissance_wallis_futuna,123,DUPONT,,JEAN,male,test@yopmail.com,0102030405,14/06/1972,98611,99100,France,Nantes,44317,20 avenue de Ségur
-131,carac_speciaux,123,DURANTéàèùòœæŒÆ,,JulieéàèùòœæŒÆ,female,test@yopmail.com,0102030405,14/06/1972,98611,99100,France,Nantes,44317,20 avenue de Ségur
-132,sans_prenom,123,MARTIN,,,female,test@yopmail.com,0102030405,14/06/1972,98611,99100,France,Nantes,44317,20 avenue de Ségur
+131,carac_speciaux,123,DURANTéàèùòœæŒÆ,,JulieéàèùòœæŒÆ,female,test@yopmail.com,0102030405,14/06/1972,2B002,99100,France,Nantes,44317,20 avenue de Ségur
+132,sans_prenom,123,MARTIN,,,female,test@yopmail.com,0102030405,14/06/1972,97601,99100,France,Nantes,44317,20 avenue de Ségur
