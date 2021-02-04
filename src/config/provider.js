@@ -7,7 +7,7 @@ export const provider = {
       signed: true,
       secure: true,
       sameSite: 'lax',
-      maxAge: (1 * 24 * 60 * 60) * 1000,// 1 day in ms
+      maxAge: (1 * 24 * 60 * 60) * 1000, // 1 day in ms
     },
     short: {
       signed: true,
