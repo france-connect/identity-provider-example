@@ -7,7 +7,7 @@ export const provider = {
       signed: true,
       secure: true,
       sameSite: 'lax',
-      maxAge: (1 * 24 * 60 * 60) * 1000, // 1 day in ms
+      maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day in ms
     },
     short: {
       signed: true,
@@ -20,11 +20,7 @@ export const provider = {
       'and one more',
     ],
   },
-  acrValues: [
-    'eidas1',
-    'eidas2',
-    'eidas3',
-  ],
+  acrValues: ['eidas1', 'eidas2', 'eidas3'],
   claims: {
     openid: ['sub'], // Identifiant technique (sub) de l'utilisateur au format OpenIDConnect
     gender: ['gender'], // Sexe
@@ -47,6 +43,7 @@ export const provider = {
       'birthcountry',
       'preferred_username',
     ],
+    unknown_prop_for_test: ['unknown_prop_for_test'], // Data for injection
   },
   grant_types_supported: ['authorization_code'],
   features: {
@@ -66,7 +63,7 @@ export const provider = {
   formats: {
     default: 'opaque',
   },
-  interactionUrl: function interactionUrl(ctx, interaction) { // eslint-disable-line no-unused-vars
+  interactionUrl: function interactionUrl(ctx) {
     return `/interaction/${ctx.oidc.uuid}`;
   },
   async logoutSource(ctx, form) {

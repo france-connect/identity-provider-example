@@ -56,6 +56,10 @@ export const findById = async (ctx, sub) => {
         phone_number: telephone,
       };
 
+      /**
+       * A la détection de l'utilisateur E020025,
+       * nous ajoutons une donnée supplémentaire imprévue
+       */
       if (identifiant === 'E020025') {
         data.unknown_prop_for_test = 'shouldNotBeThere';
       }
