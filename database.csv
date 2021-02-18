@@ -90,3 +90,7 @@ id       ,identifiant                     ,motDePasse,nomDeNaissance            
 133,naissance_wallis_futuna,123,Fleury,,Fabien,male,ijujasa-5293@yopmail.com,0102030405,1972-06-14,98611,99100,France,Nantes,44317,20 avenue de Ségur
 134,carac_speciaux,123,DURANTéàèùòœæŒÆ,,JulieéàèùòœæŒÆ,female,test@yopmail.com,0102030405,1972-06-14,2B002,99100,France,Nantes,44317,20 avenue de Ségur
 135,sans_prenom,123,MARTIN,,,female,zalojummu-4690@yopmail.com,0102030405,1972-06-14,97601,99100,France,Nantes,44317,20 avenue de Ségur
+136,Testmultiplecodepays,123,DUBOIS,,JEANCODE,male,Testmultiplecodepays@yopmail.com,0123456789,1941-11-01,,99123,France,Paris,75015,6 Rue Firmin Gillot
+137,Testmultiplecodepaysdeux,123,DUMONT,DUMONT,MARIECODE,female,Testmultiplecodepaysdeux@yopmail.com,0123456789,1940-02-02,,99217,France,Paris,75015,6 Rue Firmin Gillot
+138,Testmultiplecodepostal,123,DUROCHE,,JACQUESCODE,male,Testmultiplecodepostal@yopmail.com,0123456789,2005-01-02,27630,99100,France,Paris,75015,6 Rue Firmin Gillot
+139,Testanciencodepostal,123,DEPLACE,DEPLACE,ROSECODE,female,Testanciencodepostal@yopmail.com,0123456789,1942-02-03,75012,99100,France,Paris,75015,6 Rue Firmin Gillot
