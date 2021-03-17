@@ -1,7 +1,7 @@
 .header-logo {
     width: 200px;
     margin: 20px auto;
-    height: auto
+    height: auto;
 }
 
 section {
@@ -12,7 +12,8 @@ section {
     background-color: #fff;
 }
 
-input.button.large, input.button.large:focus {
+input.button.large,
+input.button.large:focus {
     width: 100%;
     display: block;
 }
@@ -24,4 +25,18 @@ input.button.large, input.button.large:focus {
 
 input.button {
     cursor: pointer;
+}
+
+@media screen and (max-height: 800px) {
+    .header-logo {
+        width: 120px;
+    }
+
+    section {
+        padding: 2em 0;
+    }
+
+    section .section__title {
+        margin: 0 0 1em;
+    }
 }
