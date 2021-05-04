@@ -106,4 +106,4 @@ id       ,identifiant                     ,motDePasse,nomDeNaissance            
 149,TestPaysprénom2       ,123       ,YAGA          ,BABA     ,Chantal Amélie Ingrid     ,female,testFC2@yopmail.com          ,          ,1941-11-01     ,                         ,99121              ,France     ,Paris       ,75015            ,6 Rue Firmin Gillot
 150,Testcommuneprénom     ,123       ,YOGO          ,BOBO     ,Sophie Suzanne            ,female,testFC3@yopmail.com          ,          ,1981-11-01     ,50528                    ,99100              ,France     ,Paris       ,75015            ,6 Rue Firmin Gillot
 151,Testcommuneprénom2    ,123       ,BOBO          ,         ,Jacob Henri               ,male  ,testFC4@yopmail.com          ,          ,1981-11-02     ,21331                    ,99100              ,France     ,Paris       ,75015            ,6 Rue Firmin Gillot
-
+152,testbpo               ,123       ,PONTEPRIMO    ,         ,Bruno                     ,male  ,bruno.ponteprimo@paris.fr    ,0123456789,1963-11-18     ,59000                    ,99100,             ,France     ,Lille       ,59000            ,76 Rue Saint Joseph
