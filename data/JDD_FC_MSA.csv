@@ -1,4 +1,4 @@
-num ligne,login,passwd,Nom,nom usage,Prénom,sexe,email,telephone,date naissance,lieu naissance,code pays naissance,adresse pays,adresse ville,adresse CP,adresse voie
+id,identifiant,motDePasse,nomDeNaissance,nomDUsage,prenoms,genre,email,telephone,dateDeNaissance,codePostalLieuDeNaissance,codePaysDeNaissance,adressePays,adresseVille,adresseCodePostal,adresseVoie
 174,FC_SNT_1,123,I RGKKWM YN QNPINY V ,,Jeznjhjmy,female,,,1942-05-29,,99415,,,,
 175,FC_SNT_2,123,GERIL,,Rridjs,female,,,1956-03-24,78646,99100,,,,
 176,FC_SNT_3,123,UXIJU-INDJWZ             ,,Rtidn-Kkrilunlv,female,,,1952-05-26,87104,99100,,,,
