@@ -130,3 +130,4 @@ id       ,identifiant                     ,motDePasse,nomDeNaissance            
 173,inscertif11_discrilong0         ,123,BOUCHONSNER                                         ,         ,Dpi Mélissandrea Huguette ,female,test@yopmail.com              ,123456789,1980-01-02     ,11262,99100,France     ,Paris       ,75107,20 avenue de Ségur
 174,MaprocREU1,123,ABDELJALIL,,Cedric Jean,male,smolina.cgi@gmail.com,123456789,1934-02-00,02200,99100,France,Saint-Fons,69190,55 rue Emile Zola
 175,naissance_polynesie_française   ,123,REVEIL                                              ,         ,Titouan                   ,male  ,nesspolynesie@yopmail.com     ,123456789,1998-06-18     ,98729,99100,France     ,Nantes      ,44317,20 avenue de Ségur
+176,TestInteg,123,NUM,FC,Lady Di,female,franceconnect.recette@gmail.com,123456789,1962-08-24,29200,99100,France,Paris,75107,20 avenue de Ségur
