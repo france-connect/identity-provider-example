@@ -1,3 +1,5 @@
 bdd-001,bdd_default                    ,123,DURAND             ,MARTIN     ,Jeanne                  ,female,x1_bdd_default@yopmail.com,,1962-08-24,75107,99100,,,,
 bdd-002,bdd_last_connection            ,123,DULAC              ,           ,Angela Claire Louise    ,female,x1_bdd_last_connection@yopmail.com,,1962-08-24,75107,99100,,,,
 bdd-003,bdd_enable_disable             ,123,DUPOND             ,           ,François                ,male  ,x1_bdd_enable_disable@yopmail.com,,1962-08-24,75107,99100,,,,
+bdd-004,bdd_idp_settings               ,123,BON                ,           ,Jean                    ,male  ,x1_bdd_idp_settings@yopmail.com,,1992-09-25,94073,99100,,,,
+bdd-005,bdd_no_idp_settings            ,123,ADDI               ,           ,Jack                    ,male  ,x1_bdd_no_idp_settings@yopmail.com,,2000-10-01,75113,99100,,,,
