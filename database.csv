@@ -136,3 +136,8 @@ id       ,identifiant                     ,motDePasse,nomDeNaissance            
 179,dossier_douteux       ,123       ,LALI          ,         ,MOHAMED                   ,male  ,usager_lali@yopmail.com      ,0123456789,1983-12-18     ,64445                    ,99100              ,France     ,Nantes      ,44109            ,Cours des 50 Otages
 180,plus_120_ans          ,123       ,HELLIARD      ,MISTRI   ,ANNE-SOPHIE               ,female,usager_helliard@yopmail.com  ,0233445566,1900-02-01     ,92050                    ,99100              ,France     ,Nantes      ,44109            ,Cours des 50 Otages
 181,naissance_Mayotte_anc ,123       ,M'DERE        ,         ,MANSOUR                   ,male  ,usager_mdere@yopmail.com     ,0123456789,1959-05-30     ,98511                    ,99100              ,France     ,Nantes      ,44109            ,Cours des 50 Otages
+182,cdurant,123,durant,durant,claud,male,claude.durant.dam@yopmail.com,0123456789,1961-08-24     ,75107,99100,France     ,Paris       ,75107,20 avenue de Ségur
+183,fdupont,123,boulanger,dupont,francine,male,francine.dupont.dam@yopmail.com,0123456789,1962-08-24     ,75107,99100,France     ,Paris       ,75107,20 avenue de Ségur
+184,kdupont,123,dupont,dupont,kevin,male,kevin.dupont.dam@yopmail.com,0123456789,1985-08-24     ,75107,99100,France     ,Paris       ,75107,20 avenue de Ségur
+185,mdupont,123,dupont,dupont,michel,male,michel.dupont.dam@yopmail.com,0123456789,1967-08-24     ,75107,99100,France     ,Paris       ,75107,20 avenue de Ségur
+186,pmarchand,123,marchand,marchand,pierre,male,pierre.marchand.dam@yopmail.com,0123456789,1970-08-24     ,75107,99100,France     ,Paris       ,75107,20 avenue de Ségur
