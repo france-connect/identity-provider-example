@@ -1,6 +1,6 @@
 {
   "name": "fi-example",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "lib/server.js",
   "repository": {
     "type": "git",
