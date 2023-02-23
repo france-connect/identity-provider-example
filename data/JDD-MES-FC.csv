@@ -1,4 +1,3 @@
-Id,identifiant,motDePasse,nomDeNaissance,nomDUsage,prenoms,genre,email,telephone,dateDeNaissance,codePostalLieuDeNaissance,codePaysDeNaissance,adressePays,adresseVille,adresseCodePostal,adresseVoie
 1,TestMESFC01,123,CENTUN,,CVCINQUANTECINQ,male,testmesfc01@yopmail.com,123456789,1941-02-01,39370,99100,France,LONS-LE-SAUNIER,39000,8 RUE DES LILAS
 2,TestMESFC02,123,baverans,,cvcentun,male,testmesfc02@yopmail.com,123456789,1970-04-01,39370,99100,France,LONS-LE-SAUNIER,39000,8 RUE DES LILAS
 3,TestMESFC03,123,lérenne,,énora,female,testmesfc03@yopmail.com,123456789,2004-09-06,29170,99100,France,LONS-LE-SAUNIER,39000,8 RUE DES LILAS
